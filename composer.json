@@ -1,0 +1,26 @@
+{
+    "name": "wrep/notificare-symfony",
+    "description": "An integration bundle for the notificare push notifications module into the Symfony2 framework.",
+    "type": "symfony-bundle",
+    "keywords": ["push", "notification", "ios", "apns"],
+    "homepage": "https://github.com/wrep/notificare-symfony",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rick Pastoor",
+            "email": "rick@wrep.nl"
+        },
+        {
+            "name": "Mathijs Kadijk",
+            "email": "mathijs@wrep.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.1",        
+        "wrep/notificare": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Wrep\\Bundle\\NotificareBundle": "" }
+    },
+    "target-dir": "Wrep/Bundle/NotificareBundle"
+}
