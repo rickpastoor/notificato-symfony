@@ -23,8 +23,10 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('apns')
+                ->addDefaultsIfNotSet()
                 	->children()
                 		->arrayNode('certificate')
+                		->addDefaultsIfNotSet()
                 			->children()
                 				->scalarNode('pem')->defaultValue(null)->end()
                 				->scalarNode('passphrase')->defaultValue(null)->end()
