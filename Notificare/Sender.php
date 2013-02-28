@@ -22,6 +22,6 @@ class Sender extends NotificareSender
 		}
 
 		// Call our constructor, passing certificate or null
-		parent::__constructor($certificate);
+		parent::__construct($certificate);
 	}
 }
