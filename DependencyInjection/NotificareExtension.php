@@ -21,8 +21,11 @@ class NotificareExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
 
-        $container->setParameter('notificare.apns.certificate.pem', $config['apns']['certificate']['pem']);
-        $container->setParameter('notificare.apns.certificate.passphrase', $config['apns']['certificate']['passphrase']);
+        if (isset($config['apns']) && isset($config['apns']['certificate']))
+        {
+        	$container->setParameter('notificare.apns.certificate.pem', $config['apns']['certificate']['pem']);
+        	$container->setParameter('notificare.apns.certificate.passphrase', $config['apns']['certificate']['passphrase']);
+        }
     }
 
     /**
