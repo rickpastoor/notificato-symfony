@@ -2,7 +2,7 @@
 namespace Wrep\Bundle\NotificareBundle\Notificare;
 
 use Wrep\Notificare\Apns\Sender as NotificareSender;
-use Wrep\Notificate\Apns\Certificate;
+use Wrep\Notificare\Apns\Certificate;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class Sender extends NotificareSender
