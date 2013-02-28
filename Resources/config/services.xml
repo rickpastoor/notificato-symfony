@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="notificare.sender.class">Wrep\Bundle\NotificareBundle\Notificare\Sender</parameter>
+        <parameter key="notificare.apns.message.class">Wrep\Notificare\Apns\Message</parameter>
+        <parameter key="notificare.apns.certificate.class">Wrep\Notificare\Apns\Certificate</parameter>
+    </parameters>
+
+    <services>
+        <service id="notificare.sender" class="%notificare.sender.class%">
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="notificare.apns.message" class="%notificare.apns.message.class%" />
+        <service id="notificare.apns.certificate" class="%notificare.apns.certificate.class%" />
+    </services>
+</container>
