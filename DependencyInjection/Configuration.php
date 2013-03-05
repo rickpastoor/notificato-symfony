@@ -30,6 +30,7 @@ class Configuration implements ConfigurationInterface
                 			->children()
                 				->scalarNode('pem')->defaultValue(null)->end()
                 				->scalarNode('passphrase')->defaultValue(null)->end()
+                                ->scalarNode('environment')->defaultValue('production')->end()
                 			->end()
                 		->end()
                 	->end()

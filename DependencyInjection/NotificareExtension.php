@@ -25,6 +25,7 @@ class NotificareExtension extends Extension
         {
         	$container->setParameter('notificare.apns.certificate.pem', $config['apns']['certificate']['pem']);
         	$container->setParameter('notificare.apns.certificate.passphrase', $config['apns']['certificate']['passphrase']);
+            $container->setParameter('notificare.apns.certificate.environment', $config['apns']['certificate']['environment']);
         }
     }
 
