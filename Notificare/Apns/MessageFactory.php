@@ -15,14 +15,8 @@ class MessageFactory extends NotificareApnsMessageFactory
 		// Store container
 		$this->container = $container;
 
-		// Create default certificate
-		$certificate = null;
-		if (null !== $this->container->getParameter('notificare.apns.certificate.pem'))
-		{
-			$certificate = new Certificate(	$this->container->getParameter('notificare.apns.certificate.pem'),
-											$this->container->getParameter('notificare.apns.certificate.passphrase'),
-											$this->container->getParameter('notificare.apns.certificate.environment'));
-		}
+		// Create the default certificate to use
+		$certificate = $this->container->get('notificare.apns.certificatefactory')->createDefaultCertificate();
 
 		// Call our constructor, passing certificate or null
 		parent::__construct($certificate);
