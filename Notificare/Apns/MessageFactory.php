@@ -1,5 +1,6 @@
 <?php
-namespace Wrep\Bundle\NotificareBundle\Notificare;
+
+namespace Wrep\Bundle\NotificareBundle\Apns\Notificare;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Wrep\Notificare\Apns\MessageFactory as NotificareApnsMessageFactory;
