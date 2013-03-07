@@ -1,28 +1,24 @@
-notificare-symfony
-==================
+# Notificare for Symfony2
 
-An integration bundle for the notificare push notifications module into the Symfony2 framework.
+A bundle to integrate [Notificare](https://github.com/wrep/notificare) into [Symfony2](http://symfony.com).
 
-Installation Instructions
-=========================
+## Installation
 
-Using composer (for Symfony 2.1)
---------------------------------
+### 1. Add Composer dependency
 
 The best way to install the bundle is by using [Composer](http://getcomposer.org). Add the following to `composer.json` in the root of your project:
 
-``` javascript
-{ 
+```javascript
+{
   "require": {
-    "wrep/notificare-symfony": "dev-master"
+    "wrep/notificare-symfony": "*"
   }
 }
 ```
 
-Including bundle in Kernel
---------------------------
+### Include the bundle in your Kernel
 
-*app/AppKernel.php*
+Update the *app/AppKernel.php* file:
 
 ```
 public function registerBundles()
@@ -36,19 +32,11 @@ public function registerBundles()
 }
 ```
 
-License
--------
+## License
 
-This bundle is under the MIT license. See the complete license in the bundle:
 
-    Resources/meta/LICENSE
-    
-About
------
+Notificare and Notificare for Symfony2 are released under the [MIT License](Resources/meta/LICENSE) so you can use it in commercial and non-commercial projects.
 
-See also the list of [contributors](https://github.com/Wrep/notificare-symfony/contributors).
+## Reporting an issue or a feature request
 
-Reporting an issue or a feature request
----------------------------------------
-
-Issues and feature requests are tracked in the [Github issue tracker](https://github.com/wrep/notificare-symfony/issues). You're very welcome to submit issues or submit a pull request.
+Symfony2 specific issues and feature requests are tracked in the [GitHub issue tracker](https://github.com/wrep/notificare-symfony/issues). Issues and feature requests for Noticare itself can be submitted at [the issue tracker at that repository](https://github.com/wrep/notificare/issues). You're very welcome to submit issues or submit a pull request.
