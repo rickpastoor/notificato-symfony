@@ -18,7 +18,7 @@ class NotificareExtension extends Extension
     	$configuration = new Configuration();
     	$config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
         if (isset($config['apns']) && isset($config['apns']['certificate']))
@@ -34,7 +34,7 @@ class NotificareExtension extends Extension
      */
     public function getXsdValidationBasePath()
     {
-        return __DIR__.'/../Resources/config/schema';
+        return __DIR__ . '/../Resources/config/schema';
     }
 
     /**

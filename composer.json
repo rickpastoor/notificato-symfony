@@ -18,7 +18,7 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.*",
-        "wrep/notificare": "0.1.*"
+        "wrep/notificare": "0.2.*"
     },
     "autoload": {
         "psr-0": { "Wrep\\Bundle\\NotificareBundle": "" }
