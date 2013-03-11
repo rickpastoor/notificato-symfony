@@ -2,23 +2,15 @@
 
 namespace Wrep\Bundle\NotificareBundle\Notificare\Apns;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Wrep\Notificare\Apns\MessageFactory as NotificareApnsMessageFactory;
-use Wrep\Notificare\Apns\Certificate;
 
 class MessageFactory extends NotificareApnsMessageFactory
 {
-	private $container;
+	private $certificateFactory;
 
-	public function __construct(ContainerInterface $container)
+	public function __construct(CertificateFactory $certificateFactory)
 	{
-		// Store container
-		$this->container = $container;
-
-		// Create the default certificate to use
-		$certificate = $this->container->get('notificare.apns.certificatefactory')->createDefaultCertificate();
-
-		// Call our constructor, passing certificate or null
-		parent::__construct($certificate);
+		// Fetch the default certificate from the given factory
+		parent::__construct($certificateFactory->createDefaultCertificate());
 	}
 }

@@ -7,23 +7,35 @@ use Wrep\Notificare\Apns\Certificate;
 
 class CertificateFactory
 {
-	private $container;
+	private $pemFile;
+	private $passphrase;
+	private $endpointEnv;
 
-	public function __construct(ContainerInterface $container)
+	/**
+	 * Construct CertificateFactory
+	 *
+	 * @param $pemFile string|null Path to the default PEM certificate file
+	 * @param $passphrase string|null Passphrase to use with the default PEM file
+	 * @param $endpointEnv string|null APNS environment the default certificate is valid for
+	 */
+	public function __construct($pemFile = null, $passphrase = null, $endpointEnv = Certificate::ENDPOINT_ENV_PRODUCTION)
 	{
-		// Store container
-		$this->container = $container;
+		$this->pemFile = $pemFile;
+		$this->passphrase = $passphrase;
+		$this->endpointEnv = $endpointEnv;
 	}
 
+	/**
+	 * Create the default certificate based on the settings
+	 *
+	 * @return Certificate|null
+	 */
 	public function createDefaultCertificate()
 	{
-		// Create default certificate
 		$certificate = null;
-		if (null !== $this->container->getParameter('notificare.apns.certificate.pem'))
-		{
-			$certificate = new Certificate(	$this->container->getParameter('notificare.apns.certificate.pem'),
-											$this->container->getParameter('notificare.apns.certificate.passphrase'),
-											$this->container->getParameter('notificare.apns.certificate.environment'));
+
+		if (null !== $this->pemFile) {
+			$certificate = new Certificate($this->pemFile, $this->passphrase, $this->endpointEnv);
 		}
 
 		return $certificate;
@@ -35,6 +47,7 @@ class CertificateFactory
 	 * @param $pemFile string Path to the PEM certificate file
 	 * @param $passphrase string|null Passphrase to use with the PEM file
 	 * @param $endpointEnv string APNS environment this certificate is valid for
+	 * @return Certificate
 	 */
 	public function createCertificate($pemFile, $passphrase = null, $endpointEnv = Certificate::ENDPOINT_PRODUCTION)
 	{

@@ -7,6 +7,8 @@
     <parameters>
     	<parameter key="notificare.apns.certificate.pem"></parameter>
     	<parameter key="notificare.apns.certificate.passphrase"></parameter>
+        <parameter key="notificare.apns.certificate.environment"></parameter>
+
         <parameter key="notificare.apns.sender.class">Wrep\Notificare\Apns\Sender</parameter>
         <parameter key="notificare.apns.messagefactory.class">Wrep\Bundle\NotificareBundle\Notificare\Apns\MessageFactory</parameter>
         <parameter key="notificare.apns.certificatefactory.class">Wrep\Bundle\NotificareBundle\Notificare\Apns\CertificateFactory</parameter>
@@ -14,11 +16,15 @@
 
     <services>
         <service id="notificare.apns.sender" class="%notificare.apns.sender.class%" />
+
         <service id="notificare.apns.messagefactory" class="%notificare.apns.messagefactory.class%">
-            <argument type="service" id="service_container" />
+            <argument type="service" id="notificare.apns.certificatefactory" />
         </service>
+
         <service id="notificare.apns.certificatefactory" class="%notificare.apns.certificatefactory.class%">
-            <argument type="service" id="service_container" />
+            <argument>%notificare.apns.certificate.pem%</argument>
+            <argument>%notificare.apns.certificate.passphrase%</argument>
+            <argument>%notificare.apns.certificate.environment%</argument>
         </service>
     </services>
 </container>
