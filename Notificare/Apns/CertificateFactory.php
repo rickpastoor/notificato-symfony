@@ -49,7 +49,7 @@ class CertificateFactory
 	 * @param $endpointEnv string APNS environment this certificate is valid for
 	 * @return Certificate
 	 */
-	public function createCertificate($pemFile, $passphrase = null, $endpointEnv = Certificate::ENDPOINT_PRODUCTION)
+	public function createCertificate($pemFile, $passphrase = null, $endpointEnv = Certificate::ENDPOINT_ENV_PRODUCTION)
 	{
 		return new Certificate($pemFile, $passphrase, $endpointEnv);
 	}

@@ -6,8 +6,6 @@ use Wrep\Notificare\Apns\MessageFactory as NotificareApnsMessageFactory;
 
 class MessageFactory extends NotificareApnsMessageFactory
 {
-	private $certificateFactory;
-
 	public function __construct(CertificateFactory $certificateFactory)
 	{
 		// Fetch the default certificate from the given factory
