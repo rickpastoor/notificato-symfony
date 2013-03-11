@@ -6,25 +6,20 @@ A bundle to integrate [Notificare](https://github.com/wrep/notificare) into [Sym
 
 ### 1. Add Composer dependency
 
-The best way to install the bundle is by using [Composer](http://getcomposer.org). Add the following to `composer.json` in the root of your project:
+The best way to install the bundle is by using [Composer](http://getcomposer.org). Run the following command to add Notificare as a requirement to your project:
 
-```javascript
-{
-  "require": {
-    "wrep/notificare-symfony": "*"
-  }
-}
-```
+`composer require wrep/notificare-symfony`
 
-### Include the bundle in your Kernel
+You can use `*` as a version constraint if you don't know what to use.
 
-Update the *app/AppKernel.php* file:
+### 2. Include the bundle in your Kernel
 
-```
+Add `NotificareBundle` to `app/AppKernel.php`:
+
+```php
 public function registerBundles()
 {
     $bundles = array(
-        // System Bundles
         ...
         new Wrep\Bundle\NotificareBundle\NotificareBundle(),
         ...
@@ -32,8 +27,26 @@ public function registerBundles()
 }
 ```
 
-## License
+### 3. Configuration (optional)
 
+Add the following configuration options to your `app/config.yml`:
+
+```yml
+notificare:
+    apns:
+        certificate:
+            pem: /path/to/pem/certificate.pem
+            passphrase: the-passphrase-of-the-pem
+            environment: sandbox
+```
+
+The given certificate will be used as default certificate. It's completely optional to set a default certificate, but recommended if you only push to one App.
+
+## Getting started
+
+We should add some basic examples of how to use this bundle in your project. :)
+
+## License
 
 Notificare and Notificare for Symfony2 are released under the [MIT License](Resources/meta/LICENSE) so you can use it in commercial and non-commercial projects.
 
