@@ -1,6 +1,6 @@
 <?php
 
-namespace Wrep\Bundle\NotificareBundle\DependencyInjection;
+namespace Wrep\Bundle\NotificatoBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('notificare');
+        $rootNode = $treeBuilder->root('notificato');
 
         $rootNode
             ->children()

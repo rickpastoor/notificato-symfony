@@ -1,9 +1,9 @@
 <?php
 
-namespace Wrep\Bundle\NotificareBundle\Notificare\Apns;
+namespace Wrep\Bundle\NotificatoBundle\Notificato\Apns;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Wrep\Notificare\Apns\Certificate;
+use Wrep\Notificato\Apns\Certificate;
 
 class CertificateFactory
 {

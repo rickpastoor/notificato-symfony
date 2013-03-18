@@ -5,31 +5,31 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-    	<parameter key="notificare.apns.certificate.pem"></parameter>
-    	<parameter key="notificare.apns.certificate.passphrase"></parameter>
-        <parameter key="notificare.apns.certificate.environment"></parameter>
+    	<parameter key="notificato.apns.certificate.pem"></parameter>
+    	<parameter key="notificato.apns.certificate.passphrase"></parameter>
+        <parameter key="notificato.apns.certificate.environment"></parameter>
 
-        <parameter key="notificare.apns.sender.class">Wrep\Notificare\Apns\Sender</parameter>
-        <parameter key="notificare.apns.feedbackfactory.class">Wrep\Bundle\NotificareBundle\Notificare\Apns\Feedback\FeedbackFactory</parameter>
-        <parameter key="notificare.apns.messagefactory.class">Wrep\Bundle\NotificareBundle\Notificare\Apns\MessageFactory</parameter>
-        <parameter key="notificare.apns.certificatefactory.class">Wrep\Bundle\NotificareBundle\Notificare\Apns\CertificateFactory</parameter>
+        <parameter key="notificato.apns.sender.class">Wrep\Notificato\Apns\Sender</parameter>
+        <parameter key="notificato.apns.feedbackfactory.class">Wrep\Bundle\NotificatoBundle\Notificato\Apns\Feedback\FeedbackFactory</parameter>
+        <parameter key="notificato.apns.messagefactory.class">Wrep\Bundle\NotificatoBundle\Notificato\Apns\MessageFactory</parameter>
+        <parameter key="notificato.apns.certificatefactory.class">Wrep\Bundle\NotificatoBundle\Notificato\Apns\CertificateFactory</parameter>
     </parameters>
 
     <services>
-        <service id="notificare.apns.sender" class="%notificare.apns.sender.class%" />
+        <service id="notificato.apns.sender" class="%notificato.apns.sender.class%" />
 
-        <service id="notificare.apns.feedbackfactory" class="%notificare.apns.feedbackfactory.class%">
-            <argument type="service" id="notificare.apns.certificatefactory" />
+        <service id="notificato.apns.feedbackfactory" class="%notificato.apns.feedbackfactory.class%">
+            <argument type="service" id="notificato.apns.certificatefactory" />
         </service>
 
-        <service id="notificare.apns.messagefactory" class="%notificare.apns.messagefactory.class%">
-            <argument type="service" id="notificare.apns.certificatefactory" />
+        <service id="notificato.apns.messagefactory" class="%notificato.apns.messagefactory.class%">
+            <argument type="service" id="notificato.apns.certificatefactory" />
         </service>
 
-        <service id="notificare.apns.certificatefactory" class="%notificare.apns.certificatefactory.class%">
-            <argument>%notificare.apns.certificate.pem%</argument>
-            <argument>%notificare.apns.certificate.passphrase%</argument>
-            <argument>%notificare.apns.certificate.environment%</argument>
+        <service id="notificato.apns.certificatefactory" class="%notificato.apns.certificatefactory.class%">
+            <argument>%notificato.apns.certificate.pem%</argument>
+            <argument>%notificato.apns.certificate.passphrase%</argument>
+            <argument>%notificato.apns.certificate.environment%</argument>
         </service>
     </services>
 </container>

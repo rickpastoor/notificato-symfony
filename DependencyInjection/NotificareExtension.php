@@ -1,6 +1,6 @@
 <?php
 
-namespace Wrep\Bundle\NotificareBundle\DependencyInjection;
+namespace Wrep\Bundle\NotificatoBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\Config\FileLocator;
 
-class NotificareExtension extends Extension
+class NotificatoExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -23,9 +23,9 @@ class NotificareExtension extends Extension
 
         if (isset($config['apns']) && isset($config['apns']['certificate']))
         {
-        	$container->setParameter('notificare.apns.certificate.pem', $config['apns']['certificate']['pem']);
-        	$container->setParameter('notificare.apns.certificate.passphrase', $config['apns']['certificate']['passphrase']);
-            $container->setParameter('notificare.apns.certificate.environment', $config['apns']['certificate']['environment']);
+        	$container->setParameter('notificato.apns.certificate.pem', $config['apns']['certificate']['pem']);
+        	$container->setParameter('notificato.apns.certificate.passphrase', $config['apns']['certificate']['passphrase']);
+            $container->setParameter('notificato.apns.certificate.environment', $config['apns']['certificate']['environment']);
         }
     }
 
@@ -42,6 +42,6 @@ class NotificareExtension extends Extension
      */
     public function getNamespace()
     {
-        return 'http://www.wrep.nl/schema/dic/notificare_bundle';
+        return 'http://www.wrep.nl/schema/dic/notificato_bundle';
     }
 }

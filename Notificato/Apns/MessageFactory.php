@@ -1,10 +1,10 @@
 <?php
 
-namespace Wrep\Bundle\NotificareBundle\Notificare\Apns;
+namespace Wrep\Bundle\NotificatoBundle\Notificato\Apns;
 
-use Wrep\Notificare\Apns\MessageFactory as NotificareApnsMessageFactory;
+use Wrep\Notificato\Apns\MessageFactory as NotificatoApnsMessageFactory;
 
-class MessageFactory extends NotificareApnsMessageFactory
+class MessageFactory extends NotificatoApnsMessageFactory
 {
 	public function __construct(CertificateFactory $certificateFactory)
 	{

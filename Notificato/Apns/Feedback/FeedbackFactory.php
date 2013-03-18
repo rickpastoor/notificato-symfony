@@ -1,10 +1,10 @@
 <?php
 
-namespace Wrep\Bundle\NotificareBundle\Notificare\Apns\Feedback;
+namespace Wrep\Bundle\NotificatoBundle\Notificato\Apns\Feedback;
 
-use Wrep\Notificare\Apns\Certificate;
-use Wrep\Notificare\Apns\Feedback\Feedback;
-use Wrep\Bundle\NotificareBundle\Notificare\Apns\CertificateFactory;
+use Wrep\Notificato\Apns\Certificate;
+use Wrep\Notificato\Apns\Feedback\Feedback;
+use Wrep\Bundle\NotificatoBundle\Notificato\Apns\CertificateFactory;
 
 class FeedbackFactory
 {
