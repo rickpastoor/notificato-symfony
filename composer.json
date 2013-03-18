@@ -1,6 +1,6 @@
 {
 	"name": "wrep/notificato-symfony",
-	"description": "An integration bundle for the notificato push notifications module into the Symfony2 framework.",
+	"description": "Takes care of push notifications in your Symfony2 projects.",
 	"type": "symfony-bundle",
 	"keywords": ["push", "notification", "ios", "apns", "symfony2"],
 	"homepage": "https://github.com/wrep/notificato-symfony",
@@ -19,6 +19,9 @@
 		"php": ">=5.3.3",
 		"symfony/symfony": "2.*",
 		"wrep/notificato": "0.5.*"
+	},
+	"replace": {
+		"wrep/notificato-notificare": "*"
 	},
 	"autoload": {
 		"psr-0": { "Wrep\\Bundle\\NotificatoBundle": "" }
