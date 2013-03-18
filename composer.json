@@ -21,7 +21,7 @@
 		"wrep/notificato": "0.5.*"
 	},
 	"replace": {
-		"wrep/notificato-notificare": "*"
+		"wrep/notificare-symfony": "*"
 	},
 	"autoload": {
 		"psr-0": { "Wrep\\Bundle\\NotificatoBundle": "" }
