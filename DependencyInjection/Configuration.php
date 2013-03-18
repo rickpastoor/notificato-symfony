@@ -12,31 +12,31 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function getConfigTreeBuilder()
-    {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('notificato');
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getConfigTreeBuilder()
+	{
+		$treeBuilder = new TreeBuilder();
 
-        $rootNode
-            ->children()
-                ->arrayNode('apns')
-                ->addDefaultsIfNotSet()
-                	->children()
-                		->arrayNode('certificate')
-                		->addDefaultsIfNotSet()
-                			->children()
-                				->scalarNode('pem')->defaultValue(null)->end()
-                				->scalarNode('passphrase')->defaultValue(null)->end()
-                                ->scalarNode('environment')->defaultValue('production')->end()
-                			->end()
-                		->end()
-                	->end()
-                ->end()
-            ->end();
+		$treeBuilder->root('notificato')
+			->children()
+				->arrayNode('apns')
+				->addDefaultsIfNotSet()
+					->children()
+						->arrayNode('certificate')
+						->addDefaultsIfNotSet()
+							->children()
+								->scalarNode('pem')->defaultValue(null)->end()
+								->scalarNode('passphrase')->defaultValue(null)->end()
+								->scalarNode('validate')->defaultValue(true)->end()
+								->scalarNode('environment')->defaultValue('production')->end()
+							->end()
+						->end()
+					->end()
+				->end()
+			->end();
 
-        return $treeBuilder;
-    }
+		return $treeBuilder;
+	}
 }

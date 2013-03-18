@@ -10,38 +10,39 @@ use Symfony\Component\Config\FileLocator;
 
 class NotificatoExtension extends Extension
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function load(array $configs, ContainerBuilder $container)
-    {
-    	$configuration = new Configuration();
-    	$config = $this->processConfiguration($configuration, $configs);
+	/**
+	 * {@inheritDoc}
+	 */
+	public function load(array $configs, ContainerBuilder $container)
+	{
+		$configuration = new Configuration();
+		$config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('services.xml');
+		$loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+		$loader->load('services.xml');
 
-        if (isset($config['apns']) && isset($config['apns']['certificate']))
-        {
-        	$container->setParameter('notificato.apns.certificate.pem', $config['apns']['certificate']['pem']);
-        	$container->setParameter('notificato.apns.certificate.passphrase', $config['apns']['certificate']['passphrase']);
-            $container->setParameter('notificato.apns.certificate.environment', $config['apns']['certificate']['environment']);
-        }
-    }
+		if (isset($config['apns']) && isset($config['apns']['certificate']))
+		{
+			$container->setParameter('notificato.apns.certificate.pem', $config['apns']['certificate']['pem']);
+			$container->setParameter('notificato.apns.certificate.passphrase', $config['apns']['certificate']['passphrase']);
+			$container->setParameter('notificato.apns.certificate.validate', $config['apns']['certificate']['validate']);
+			$container->setParameter('notificato.apns.certificate.environment', $config['apns']['certificate']['environment']);
+		}
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getXsdValidationBasePath()
-    {
-        return __DIR__ . '/../Resources/config/schema';
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getXsdValidationBasePath()
+	{
+		return __DIR__ . '/../Resources/config/schema';
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getNamespace()
-    {
-        return 'http://www.wrep.nl/schema/dic/notificato_bundle';
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getNamespace()
+	{
+		return 'http://www.wrep.nl/schema/dic/notificato_bundle';
+	}
 }

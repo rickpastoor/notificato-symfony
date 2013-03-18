@@ -9,24 +9,27 @@ class CertificateFactory
 {
 	private $pemFile;
 	private $passphrase;
+	private $validate;
 	private $endpointEnv;
 
 	/**
 	 * Construct CertificateFactory
 	 *
-	 * @param $pemFile string|null Path to the default PEM certificate file
-	 * @param $passphrase string|null Passphrase to use with the default PEM file
-	 * @param $endpointEnv string|null APNS environment the default certificate is valid for
+	 * @param string Path to the PEM certificate file
+	 * @param string|null Passphrase to use with the PEM file
+	 * @param boolean Set to false to skip the validation of the certificate, default true
+	 * @param string|null APNS environment this certificate is valid for, by default autodetects during validation
 	 */
-	public function __construct($pemFile = null, $passphrase = null, $endpointEnv = Certificate::ENDPOINT_ENV_PRODUCTION)
+	public function __construct($pemFile, $passphrase = null, $validate = true, $endpointEnv = null)
 	{
 		$this->pemFile = $pemFile;
 		$this->passphrase = $passphrase;
+		$this->validate = $validate;
 		$this->endpointEnv = $endpointEnv;
 	}
 
 	/**
-	 * Create the default certificate based on the settings
+	 * Create the default certificate
 	 *
 	 * @return Certificate|null
 	 */
@@ -35,7 +38,7 @@ class CertificateFactory
 		$certificate = null;
 
 		if (null !== $this->pemFile) {
-			$certificate = new Certificate($this->pemFile, $this->passphrase, $this->endpointEnv);
+			$certificate = new Certificate($this->pemFile, $this->passphrase, $this->validate, $this->endpointEnv);
 		}
 
 		return $certificate;
@@ -44,13 +47,14 @@ class CertificateFactory
 	/**
 	 * Create a Certificate
 	 *
-	 * @param $pemFile string Path to the PEM certificate file
-	 * @param $passphrase string|null Passphrase to use with the PEM file
-	 * @param $endpointEnv string APNS environment this certificate is valid for
+	 * @param string Path to the PEM certificate file
+	 * @param string|null Passphrase to use with the PEM file
+	 * @param boolean Set to false to skip the validation of the certificate, default true
+	 * @param string|null APNS environment this certificate is valid for, by default autodetects during validation
 	 * @return Certificate
 	 */
-	public function createCertificate($pemFile, $passphrase = null, $endpointEnv = Certificate::ENDPOINT_ENV_PRODUCTION)
+	public function createCertificate($pemFile, $passphrase = null, $validate = true, $endpointEnv = null)
 	{
-		return new Certificate($pemFile, $passphrase, $endpointEnv);
+		return new Certificate($pemFile, $passphrase, $validate, $endpointEnv);
 	}
 }
