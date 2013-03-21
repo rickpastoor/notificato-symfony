@@ -5,11 +5,13 @@
 	xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
 	<parameters>
+		<!-- Configuration -->
 		<parameter key="notificato.apns.certificate.pem"></parameter>
 		<parameter key="notificato.apns.certificate.passphrase"></parameter>
 		<parameter key="notificato.apns.certificate.validate"></parameter>
 		<parameter key="notificato.apns.certificate.environment"></parameter>
 
+		<!-- Classes -->
 		<parameter key="notificato.class">Wrep\Notificato\Notificato</parameter>
 		<parameter key="notificato.apns.sender.class">Wrep\Notificato\Apns\Sender</parameter>
 		<parameter key="notificato.apns.feedbackfactory.class">Wrep\Bundle\NotificatoBundle\Notificato\Apns\Feedback\FeedbackFactory</parameter>
@@ -18,7 +20,15 @@
 	</parameters>
 
 	<services>
-		<service id="notificato" class="%notificato.class%" />
+		<!-- The basic Notificato service -->
+		<service id="notificato" class="%notificato.class%">
+			<argument>%notificato.apns.certificate.pem%</argument>
+			<argument>%notificato.apns.certificate.passphrase%</argument>
+			<argument>%notificato.apns.certificate.validate%</argument>
+			<argument>%notificato.apns.certificate.environment%</argument>
+		</service>
+
+		<!-- Classes for more advanced use -->
 		<service id="notificato.apns.sender" class="%notificato.apns.sender.class%" />
 		<service id="notificato.apns.feedbackfactory" class="%notificato.apns.feedbackfactory.class%">
 			<argument type="service" id="notificato.apns.certificatefactory" />
