@@ -2,7 +2,7 @@
 	"name": "wrep/notificato-symfony",
 	"description": "Takes care of push notifications in your Symfony2 projects.",
 	"type": "symfony-bundle",
-	"keywords": ["push", "notification", "ios", "apns", "symfony2"],
+	"keywords": ["push", "notifications", "pushnotifications", "push notifications", "apns", "aps", "ios", "symfony2"],
 	"homepage": "https://github.com/wrep/notificato-symfony",
 	"license": "MIT",
 	"authors": [
