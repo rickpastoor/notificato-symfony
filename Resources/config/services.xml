@@ -14,9 +14,9 @@
 		<!-- Classes -->
 		<parameter key="notificato.class">Wrep\Notificato\Notificato</parameter>
 		<parameter key="notificato.apns.sender.class">Wrep\Notificato\Apns\Sender</parameter>
-		<parameter key="notificato.apns.feedbackfactory.class">Wrep\Bundle\NotificatoBundle\Notificato\Apns\Feedback\FeedbackFactory</parameter>
-		<parameter key="notificato.apns.messagefactory.class">Wrep\Bundle\NotificatoBundle\Notificato\Apns\MessageFactory</parameter>
-		<parameter key="notificato.apns.certificatefactory.class">Wrep\Bundle\NotificatoBundle\Notificato\Apns\CertificateFactory</parameter>
+		<parameter key="notificato.apns.feedbackfactory.class">Wrep\Notificato\Apns\Feedback\FeedbackFactory</parameter>
+		<parameter key="notificato.apns.messagefactory.class">Wrep\Notificato\Apns\MessageFactory</parameter>
+		<parameter key="notificato.apns.certificatefactory.class">Wrep\Notificato\Apns\CertificateFactory</parameter>
 	</parameters>
 
 	<services>
