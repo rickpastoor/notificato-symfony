@@ -1,11 +1,11 @@
-# Notificato for Symfony2
+# Notificato for Symfony2 & Symfony3
 
-[Notificato](https://github.com/wrep/notificato) takes care of push notifications in your Symfony2 projects.
+[Notificato](https://github.com/wrep/notificato) takes care of push notifications in your Symfony2 & Symfony3 projects.
 
 > *Italian:* **notificato** è: participio passato *English:* **notified**
 
 ## What is Notificato?
-Notificato makes you send push messages from PHP projects, this repository is a Symfony2 bundle to easily integrate into Symfony. Want to know more about Notificato? Please check out the [Notificate repository](https://github.com/wrep/notificato) for more information.
+Notificato makes you send push messages from PHP projects, this repository is a Symfony2 & Symfony3 bundle to easily integrate into Symfony. Want to know more about Notificato? Please check out the [Notificate repository](https://github.com/mac-cain13/notificato) for more information.
 
 ## Installation
 
@@ -74,14 +74,14 @@ class PushController extends Controller
 }
 ```
 
-Use `$this->get('notificato');` to get a Notificato object that is already set up with the default certificate from the config. From there everything is the same as using the normal Notificato library, so check out the [docs](https://github.com/wrep/notificato/blob/master/doc/Readme.md) and [API description](http://wrep.github.com/notificato/master/) over there for more tips and tricks.
+Use `$this->get('notificato');` to get a Notificato object that is already set up with the default certificate from the config. From there everything is the same as using the normal Notificato library, so check out the [docs](https://github.com/mac-cain13/notificato/blob/master/doc/Readme.md) and [API description](http://mac-cain13.github.io/notificato/master/) over there for more tips and tricks.
 
 Note that there are more services available to get deeper into the Notificare structure, take a look at the services.xml if you're interested.
 
 ## Contribute
-We'll love contributions, read the Notificare [Contribute.md](https://github.com/wrep/notificato/blob/master/Contribute.md) for some more info on what you can do and stuff that you should know if you want to help!
+We'll love contributions, read the Notificato [Contribute.md](https://github.com/mac-cain13/notificato/blob/master/Contribute.md) for some more info on what you can do and stuff that you should know if you want to help!
 
-Please note that issues and feature requests specific to Notificare for Symfony2 are tracked in the [GitHub issue tracker](https://github.com/wrep/notificato-symfony/issues) with this repository. Issues and feature requests for Noticare itself can be submitted at [the issue tracker at that repository](https://github.com/wrep/notificato/issues).
+Please note that issues and feature requests specific to Notificato for Symfony2 & Symfony3 are tracked in the [GitHub issue tracker](https://github.com/rickpastoor/notificato-symfony/issues) with this repository. Issues and feature requests for Noticare itself can be submitted at [the issue tracker at that repository](https://github.com/wrep/notificato/issues).
 
 ## License & Credits
-Notificato for Symfony2 is released under the [MIT License](License) by [Wrep](http://www.wrep.nl/), so feel free to use it in commercial and non-commercial projects.
+Notificato for Symfony2 & Symfony3 is released under the [MIT License](License) by [Rick Pastoor](https://github.com/rickpastoor) & [Mathijs Kadijk](https://github.com/mac-cain13), so feel free to use it in commercial and non-commercial projects.
